@@ -25,9 +25,9 @@ export default async function handler(
 
   const completion = await openai.createCompletion({
     model: "text-davinci-003",
-    prompt: `tokyo travel introduction.\n
+    prompt: `translate into traditional chinese more than 800 words.\n
     Topic: ${prompt}\n
-    LionTech motivational quote:`,
+    travel recommendation:`,
     max_tokens: 1500,
     temperature: 0.6,
     presence_penalty: 0,
