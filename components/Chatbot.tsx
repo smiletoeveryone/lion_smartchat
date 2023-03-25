@@ -59,7 +59,7 @@ const Chatbot = () => {
 
   return (
     <div className="container">
-      <h1>旅遊顧問_小獅</h1>
+      <h1>旅遊顧問_小獅 Chatbot</h1>
       <div className="chat-window">
         {messages.map((message, index) => (
           <ChatMessage
@@ -69,7 +69,10 @@ const Chatbot = () => {
           />
         ))}
       </div>
-      <ChatInput onSubmit={handleSendMessage} />
+      <ChatInput onSubmit={handleSendMessage}/>
+      
+      
+      
     </div>
   );
 };

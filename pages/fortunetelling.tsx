@@ -60,13 +60,14 @@ export default function Home() {
         </div>
         <Form onSubmit={handleSubmit} className={styles.inputForm}>
           <Form.Group className='mb-3' controlId='prompt-input'>
-            <Form.Label>您好：我是您的旅遊顧問_小獅，歡迎詢問任何問題❗️😋️</Form.Label>
+            <Form.Label>您好：我是您的旅遊顧問_小獅❗️😋️</Form.Label>
             <Form.Control
               name='prompt'
-              placeholder='請在此輸入您的自我介紹...'
+              placeholder='請在此輸入您的個人特質...'
               maxLength={100}
             />
           </Form.Group>
+          
           <Button type='submit' className='mb-3' disabled={quoteLoading}>
             算命
           </Button>
@@ -86,7 +87,7 @@ export default function Home() {
           </Button>
         </Form>
         {quoteLoading && <Spinner animation='border' />}
-        {quoteLoading && '完整輸出後，您將得到1000點數。'}
+        {quoteLoading && '算命完，您將得到1000點數❗️❗️❗️'}
         
         {quoteLoadingError && "Something went wrong. Please try again."}
         <Typewriter text={quote} />
