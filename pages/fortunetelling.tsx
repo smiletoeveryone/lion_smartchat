@@ -5,11 +5,7 @@ import mainImage from '@/assets/images/lionfb_01.jpg'
 import { Form, Button, Spinner } from 'react-bootstrap'
 import { FormEvent, useState } from 'react'
 import Typewriter from '../components/Typewriter';
-import { useEffect } from 'react';
-import axios from 'axios';
-//import ChatInput from '../components/ChatInput';
-//import ChatMessage from '../components/ChatMessage';
-//import Chatbot from '../components/Chatbot';
+import Chatbot from '../components/Chatbot';
 
 
 export default function Home() {
@@ -50,7 +46,7 @@ export default function Home() {
         <link rel="icon" href="/lion.png" />
       </Head>
       <main className={styles.main}>
-        <h1>算命好好玩，抽大獎🪅️</h1>
+        <h1>小獅顧問算命，抽大獎🪅️</h1>
         <h2>12.雄獅是科技公司才隊</h2>
         <div>天天點數加倍送</div>
         <div className={styles.mainImageContainer}>
@@ -64,25 +60,38 @@ export default function Home() {
         </div>
         <Form onSubmit={handleSubmit} className={styles.inputForm}>
           <Form.Group className='mb-3' controlId='prompt-input'>
-            <Form.Label>您好：我是AI算命師，歡迎詢問任何問題❗️😋️</Form.Label>
-            
+            <Form.Label>您好：我是您的旅遊顧問_小獅，歡迎詢問任何問題❗️😋️</Form.Label>
+            <Form.Control
+              name='prompt'
+              placeholder='請在此輸入您的自我介紹...'
+              maxLength={100}
+            />
           </Form.Group>
-          <Button href="/fortunetelling" type='submit' className='mb-3' disabled={quoteLoading}>
-            前去算命
+          <Button type='submit' className='mb-3' disabled={quoteLoading}>
+            算命
           </Button>
           
           <div></div>
-          {/*<Button href= "/text2image" type='submit' className='mb-3' disabled={quoteLoading}>
+          <Button href= "/text2image" type='submit' className='mb-3' disabled={quoteLoading}>
             輸入文字產生圖像
-          </Button>*/}
+          </Button>
+          <div></div>
+          <Button
+            href="/"
+            type="submit"
+            className="mb-3"
+            //disabled={quoteLoading}
+          >
+            回到首頁
+          </Button>
         </Form>
         {quoteLoading && <Spinner animation='border' />}
+        {quoteLoading && '完整輸出後，您將得到1000點數。'}
+        
         {quoteLoadingError && "Something went wrong. Please try again."}
         <Typewriter text={quote} />
-        
-        
-        
-      </main>
+                <Chatbot />
+                </main>
       </>
   )
 }
